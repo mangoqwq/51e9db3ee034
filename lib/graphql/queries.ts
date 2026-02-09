@@ -19,14 +19,3 @@ export const GET_ALL_EVENTS = gql(`
     }
   }
 `);
-
-export const GET_EVENT = gql(`
-    query GetEvent($id: ID!) {
-        id
-        name
-        event_type
-        permission
-        start_time
-        end_time
-        description
-`)

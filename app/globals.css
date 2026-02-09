@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme extend {
+  --color-background: #fafafa;
+  --color-foreground: #111827;
+  --color-surface: #ffffff;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Event type colors */
+  --color-event-workshop: #3B82F6;
+  --color-event-workshop-light: #EFF6FF;
+  --color-event-tech-talk: #8B5CF6;
+  --color-event-tech-talk-light: #F5F3FF;
+  --color-event-activity: #10B981;
+  --color-event-activity-light: #ECFDF5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+@keyframes dialog-in {
+  from { opacity: 0; scale: 0.97; }
+}
+@keyframes dialog-out {
+  to { opacity: 0; scale: 0.97; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --color-background: #1a1a1f;
+  --color-foreground: #e8e8ec;
+  --color-surface: #232329;
+  --color-muted-foreground: #8e8e9a;
+  --color-border: #2e2e36;
+
+  --color-event-workshop-light: #1c2d4d;
+  --color-event-tech-talk-light: #2a1c4d;
+  --color-event-activity-light: #143832;
 }
